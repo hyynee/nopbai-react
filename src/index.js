@@ -7,15 +7,19 @@ import StyleDemo from "./StyleDemo/StyleDemo";
 import DemoChangeFontSize from "./State/DemoChangeFontSize";
 import DemoChangeColor from "./State/DemoChangeColor";
 import RenderWithMap from "./RenderWithMap/RenderWithMap";
+import DemoLogin from "./State/DemoLogin";
+import DemoChangeKinh from "./State/DemoChangeKinh";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>
     {/* <Home></Home> */}
-    {/* <HomeBT></HomeBT> */}
+    <HomeBT></HomeBT>
     {/* <StyleDemo></StyleDemo> */}
     {/* <p className="color-red">111223</p> // vẫn ăn css do global style css */}
     {/* <DemoChangeFontSize></DemoChangeFontSize> */}
     {/* <DemoChangeColor></DemoChangeColor> */}
-    <RenderWithMap></RenderWithMap>
+    {/* <RenderWithMap></RenderWithMap> */}
+    {/* <DemoLogin></DemoLogin> */}
+    <DemoChangeKinh></DemoChangeKinh>
   </div>
 );
