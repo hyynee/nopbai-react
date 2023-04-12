@@ -9,6 +9,7 @@ import DemoChangeColor from "./State/DemoChangeColor";
 import RenderWithMap from "./RenderWithMap/RenderWithMap";
 import DemoLogin from "./State/DemoLogin";
 import DemoChangeKinh from "./State/DemoChangeKinh";
+import "./assets/css/index.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>

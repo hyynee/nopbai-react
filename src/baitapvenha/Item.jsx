@@ -3,225 +3,98 @@ import React, { Component } from "react";
 export default class Item extends Component {
   render() {
     return (
-      <section className="item">
-        <div className="container">
-          <div className="row">
-          <div className="col-4">
-              <div className="card">
-                <div className="card-body">
-                  <div
-                    class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"
-                    style={{
-                      position: "absolute",
-                      width: 50,
-                      height: 50,
-                      top: -25,
-                      left: 170,
-                      textAlign: "center",
-                      fontSize: 30,
-                    }}
-                  >
-                    <i class="fab fa-apple"></i>
+      <div>
+        <section className="pt-4">
+          <div className="container px-lg-5">
+            <div className="row gx-lg-5">
+              <div className="col-lg-6 col-xxl-4 mb-5">
+                <div className="card bg-light border-0 h-100">
+                  <div className="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                    <div className="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                      <i className="fa fa-address-book" />
+                    </div>
+                    <h2 className="fs-4 fw-bold">Fresh new layout</h2>
+                    <p className="mb-0">
+                      With Bootstrap 5, we've created a fresh new layout for
+                      this template!
+                    </p>
                   </div>
-                  <div className="img" style={{ paddingTop: 25 }}>
-                    <img
-                      src=""
-                      alt=""
-                      className="w-100"
-                      style={{ height: 120 }}
-                    />
-                  </div>
-                  <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
-                    <i class="bi bi-cloud-download"></i>
-                  </div>
-                  <h2 className="text-center fw-bold">Fresh new layout</h2>
-                  <p className="text-center" style={{fontSize:20,lineHeight:1.2}}>
-                  With Bootstrap 5, we've created a fresh <br /> new layout for this template!
-                  </p>
                 </div>
               </div>
-            </div>
-            <div className="col-4">
-              <div className="card">
-                <div className="card-body">
-                  <div
-                    class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"
-                    style={{
-                      position: "absolute",
-                      width: 50,
-                      height: 50,
-                      top: -25,
-                      left: 170,
-                      textAlign: "center",
-                      fontSize: 30,
-                    }}
-                  >
-                    <i class="fab fa-apple"></i>
+              <div className="col-lg-6 col-xxl-4 mb-5">
+                <div className="card bg-light border-0 h-100">
+                  <div className="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                    <div className="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                      <i className="fa fa-home" />
+                    </div>
+                    <h2 className="fs-4 fw-bold">Free to download</h2>
+                    <p className="mb-0">
+                      As always, Start Bootstrap has a powerful collectin of
+                      free templates.
+                    </p>
                   </div>
-                  <div className="img" style={{ paddingTop: 25 }}>
-                    <img
-                      src=""
-                      alt=""
-                      className="w-100"
-                      style={{ height: 120 }}
-                    />
-                  </div>
-                  <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
-                    <i class="bi bi-cloud-download"></i>
-                  </div>
-                  <h2 className="text-center fw-bold">Free to download </h2>
-                  <p className="text-center" style={{fontSize:20,lineHeight:1.2}}>
-                    As always, Start Bootstrap has a <br /> powerful collectin
-                    of free templates.
-                  </p>
                 </div>
               </div>
-            </div>
-            <div className="col-4">
-              <div className="card">
-                <div className="card-body">
-                  <div
-                    class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"
-                    style={{
-                      position: "absolute",
-                      width: 50,
-                      height: 50,
-                      top: -25,
-                      left: 170,
-                      textAlign: "center",
-                      fontSize: 30,
-                    }}
-                  >
-                    <i class="fab fa-apple"></i>
+              <div className="col-lg-6 col-xxl-4 mb-5">
+                <div className="card bg-light border-0 h-100">
+                  <div className="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                    <div className="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                      <i className="fa fa-camera" />
+                    </div>
+                    <h2 className="fs-4 fw-bold">Jumbotron hero header</h2>
+                    <p className="mb-0">
+                      The heroic part of this template is the jumbotron hero
+                      header!
+                    </p>
                   </div>
-                  <div className="img" style={{ paddingTop: 25 }}>
-                    <img
-                      src=""
-                      alt=""
-                      className="w-100"
-                      style={{ height: 120 }}
-                    />
+                </div>
+              </div>
+              <div className="col-lg-6 col-xxl-4 mb-5">
+                <div className="card bg-light border-0 h-100">
+                  <div className="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                    <div className="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                      <i className="fab fa-chrome" />
+                    </div>
+                    <h2 className="fs-4 fw-bold">Feature boxes</h2>
+                    <p className="mb-0">
+                      We've created some custom feature boxes using Bootstrap
+                      icons!
+                    </p>
                   </div>
-                  <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
-                    <i class="bi bi-cloud-download"></i>
+                </div>
+              </div>
+              <div className="col-lg-6 col-xxl-4 mb-5">
+                <div className="card bg-light border-0 h-100">
+                  <div className="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                    <div className="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                      <i className="fa fa-dice-d20" />
+                    </div>
+                    <h2 className="fs-4 fw-bold">Simple clean code</h2>
+                    <p className="mb-0">
+                      We keep our dependencies up to date and squash bugs as
+                      they come!
+                    </p>
                   </div>
-                  <h2 className="text-center fw-bold">Jumbotron hero header </h2>
-                  <p className="text-center" style={{fontSize:20,lineHeight:1.2}}>
-                  The heroic part of this template is the <br /> jumbotron hero header!
-                  </p>
+                </div>
+              </div>
+              <div className="col-lg-6 col-xxl-4 mb-5">
+                <div className="card bg-light border-0 h-100">
+                  <div className="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                    <div className="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                      <i className="fa fa-envelope" />
+                    </div>
+                    <h2 className="fs-4 fw-bold">A name you trust</h2>
+                    <p className="mb-0">
+                      Start Bootstrap has been the leader in free Bootstrap
+                      templates since 2013!
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="row" style={{ paddingTop: 40 }}>
-          <div className="col-4">
-              <div className="card">
-                <div className="card-body">
-                  <div
-                    class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"
-                    style={{
-                      position: "absolute",
-                      width: 50,
-                      height: 50,
-                      top: -25,
-                      left: 170,
-                      textAlign: "center",
-                      fontSize: 30,
-                    }}
-                  >
-                    <i class="fab fa-apple"></i>
-                  </div>
-                  <div className="img" style={{ paddingTop: 25 }}>
-                    <img
-                      src=""
-                      alt=""
-                      className="w-100"
-                      style={{ height: 120 }}
-                    />
-                  </div>
-                  <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
-                    <i class="bi bi-cloud-download"></i>
-                  </div>
-                  <h2 className="text-center fw-bold">Feature boxes </h2>
-                  <p className="text-center" style={{fontSize:20,lineHeight:1.2}}>
-                  We've created some custom feature <br /> boxes using Bootstrap icons!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="card">
-                <div className="card-body">
-                  <div
-                    class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"
-                    style={{
-                      position: "absolute",
-                      width: 50,
-                      height: 50,
-                      top: -25,
-                      left: 170,
-                      textAlign: "center",
-                      fontSize: 30,
-                    }}
-                  >
-                    <i class="fab fa-apple"></i>
-                  </div>
-                  <div className="img" style={{ paddingTop: 25 }}>
-                    <img
-                      src=""
-                      alt=""
-                      className="w-100"
-                      style={{ height: 120 }}
-                    />
-                  </div>
-                  <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
-                    <i class="bi bi-cloud-download"></i>
-                  </div>
-                  <h2 className="text-center fw-bold">Simple clean code</h2>
-                  <p className="text-center" style={{fontSize:20,lineHeight:1.2}}>
-                  We keep our dependencies up to date <br /> and squash bugs as they come!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="card">
-                <div className="card-body">
-                  <div
-                    class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"
-                    style={{
-                      position: "absolute",
-                      width: 50,
-                      height: 50,
-                      top: -25,
-                      left: 170,
-                      textAlign: "center",
-                      fontSize: 30,
-                    }}
-                  >
-                    <i class="fab fa-apple"></i>
-                  </div>
-                  <div className="img" style={{ paddingTop: 25 }}>
-                    <img
-                      src=""
-                      alt=""
-                      className="w-100"
-                      style={{ height: 120 }}
-                    />
-                  </div>
-                  <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
-                    <i class="bi bi-cloud-download"></i>
-                  </div>
-                  <h2 className="text-center fw-bold">A name you trust</h2>
-                  <p className="text-center" style={{fontSize:20,lineHeight:1.2}}>
-                  Start Bootstrap has been the leader in <br /> free Bootstrap templates since 2013!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     );
   }
 }
