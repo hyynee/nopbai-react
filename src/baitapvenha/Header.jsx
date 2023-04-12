@@ -9,17 +9,17 @@ export default class Header extends Component {
             <div className="text-white">Start Bootstrap</div>
             <nav className="menu">
               <ul class="nav nav-underline">
-                <li class="nav-item">
+                <li class="nav-item"  style={{marginRight:10}}>
                   <a class="nav-link active text-light fw-semibold" aria-current="page" href="#">
                    Home
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item"  style={{marginRight:10}}>
                   <a class="nav-link text-light" href="#">
                     About
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item"  style={{marginRight:10}}>
                   <a class="nav-link text-light" href="#">
                     Contact
                   </a>
