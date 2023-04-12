@@ -20,6 +20,6 @@ root.render(
     {/* <DemoChangeColor></DemoChangeColor> */}
     {/* <RenderWithMap></RenderWithMap> */}
     {/* <DemoLogin></DemoLogin> */}
-    <DemoChangeKinh></DemoChangeKinh>
+    {/* <DemoChangeKinh></DemoChangeKinh> */}
   </div>
 );
