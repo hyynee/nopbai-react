@@ -10,17 +10,21 @@ import RenderWithMap from "./RenderWithMap/RenderWithMap";
 import DemoLogin from "./State/DemoLogin";
 import DemoChangeKinh from "./State/DemoChangeKinh";
 import "./assets/css/index.css";
+import ChangeCar from "./baitapchonxe/ChangeCar";
+import DemoProps from "./Props/DemoProps";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>
     {/* <Home></Home> */}
-    <HomeBT></HomeBT>
     {/* <StyleDemo></StyleDemo> */}
     {/* <p className="color-red">111223</p> // vẫn ăn css do global style css */}
     {/* <DemoChangeFontSize></DemoChangeFontSize> */}
     {/* <DemoChangeColor></DemoChangeColor> */}
     {/* <RenderWithMap></RenderWithMap> */}
     {/* <DemoLogin></DemoLogin> */}
-    {/* <DemoChangeKinh></DemoChangeKinh> */}
+    {/* <ChangeCar></ChangeCar> */}
+    {/* <DemoProps></DemoProps> */}
+    {/* <HomeBT></HomeBT> */}
+    <DemoChangeKinh></DemoChangeKinh>
   </div>
 );
