@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 
+import Demo from "../StyleDemo/style.module.css";
 export default class DemoChangeKinh extends Component {
   state = {
-    changeImg: `./img/v1.png`
+    changeImg: `./img/v1.png`,
   };
   render() {
     return (
-      <section>
+      <section
+        className={Demo.background}
+        style={{
+          backgroundImage: `url("/img/background.jpg")`,
+        }}
+      >
         <div className="container">
           <h3>Chọn Kính Muốn Thử</h3>
           <div className="row">
@@ -20,13 +26,14 @@ export default class DemoChangeKinh extends Component {
                 <img src="./img/model.jpg" className="w-75" />
               </div>
               <div
+                className={Demo.change}
                 style={{
                   position: "absolute",
                   top: "26%",
                   left: "17%",
                 }}
               >
-                <img src={this.state.changeImg} alt="" cla className="w-100" />
+                <img src={this.state.changeImg} alt="" className="w-75" />
               </div>
             </div>
             <div className="col-6 p-4">
@@ -35,7 +42,8 @@ export default class DemoChangeKinh extends Component {
           </div>
 
           <div className="d-flex" style={{ paddingTop: 100 }}>
-            <button className="mx-2"
+            <button
+              className="mx-2"
               onClick={() => {
                 this.setState({
                   changeImg: `./img/v1.png`,
@@ -44,7 +52,8 @@ export default class DemoChangeKinh extends Component {
             >
               <img src="./img/v1.png" alt="" cla className="w-100" />
             </button>
-            <button className="mx-2"
+            <button
+              className="mx-2"
               onClick={() => {
                 this.setState({
                   changeImg: `./img/v2.png`,
@@ -53,7 +62,8 @@ export default class DemoChangeKinh extends Component {
             >
               <img src="./img/v2.png" alt="" className="w-100" />
             </button>
-            <button className="mx-2"
+            <button
+              className="mx-2"
               onClick={() => {
                 this.setState({
                   changeImg: `./img/v3.png`,
@@ -62,7 +72,8 @@ export default class DemoChangeKinh extends Component {
             >
               <img src="./img/v3.png" alt="" className="w-100" />
             </button>
-            <button className="mx-2"
+            <button
+              className="mx-2"
               onClick={() => {
                 this.setState({
                   changeImg: `./img/v4.png`,
@@ -71,7 +82,8 @@ export default class DemoChangeKinh extends Component {
             >
               <img src="./img/v4.png" alt="" className="w-100" />
             </button>
-            <button className="mx-2"
+            <button
+              className="mx-2"
               onClick={() => {
                 this.setState({
                   changeImg: `./img/v5.png`,
@@ -80,7 +92,8 @@ export default class DemoChangeKinh extends Component {
             >
               <img src="./img/v5.png" alt="" className="w-100" />
             </button>
-            <button className="mx-2"
+            <button
+              className="mx-2"
               onClick={() => {
                 this.setState({
                   changeImg: `./img/v6.png`,
@@ -89,7 +102,8 @@ export default class DemoChangeKinh extends Component {
             >
               <img src="./img/v6.png" alt="" className="w-100" />
             </button>
-            <button className="mx-2"
+            <button
+              className="mx-2"
               onClick={() => {
                 this.setState({
                   changeImg: `./img/v7.png`,
@@ -98,7 +112,8 @@ export default class DemoChangeKinh extends Component {
             >
               <img src="./img/v7.png" alt="" className="w-100" />
             </button>
-            <button className="mx-2"
+            <button
+              className="mx-2"
               onClick={() => {
                 this.setState({
                   changeImg: `./img/v8.png`,
@@ -107,7 +122,8 @@ export default class DemoChangeKinh extends Component {
             >
               <img src="./img/v8.png" alt="" className="w-100" />
             </button>
-            <button className="mx-2"
+            <button
+              className="mx-2"
               onClick={() => {
                 this.setState({
                   changeImg: `./img/v9.png`,

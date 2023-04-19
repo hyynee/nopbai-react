@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../baitapvenha/Header";
 import Carousel from "./Carousel";
 import Footer from "../baitapvenha/Footer";
-import Item from "./Item";
+import ProductItem from "./ProductItem";
 
 export default class Home extends Component {
   render() {
@@ -13,7 +13,7 @@ export default class Home extends Component {
           <Carousel></Carousel>
         </div>
         <div>
-          <Item></Item>
+         <ProductItem></ProductItem>
         </div>
         <div>
           <Footer></Footer>
