@@ -30,10 +30,16 @@ root.render(
           <Route path="cart" element={<ProductDetail></ProductDetail>}></Route>
           <Route path="login" element={<Login></Login>}></Route>
           <Route path="profile" element={<Profile></Profile>}></Route>
-          <Route path="react-form" element={<ReactFormDemo></ReactFormDemo>}></Route>
+          <Route
+            path="react-form"
+            element={<ReactFormDemo></ReactFormDemo>}
+          ></Route>
           <Route path="demo" element={<HomeBT></HomeBT>}></Route>
-          <Route path="glasses" element={<DemoChangeKinh></DemoChangeKinh>}></Route>
-          <Route path="*" element={<Navigate to={'/'}></Navigate>}></Route>
+          <Route
+            path="glasses"
+            element={<DemoChangeKinh></DemoChangeKinh>}
+          ></Route>
+          <Route path="*" element={<Navigate to={"/"}></Navigate>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

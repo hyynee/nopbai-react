@@ -1,9 +1,42 @@
 import React, { Component } from "react";
-
+import { arrGlasses } from "../assets/data/data";
 import Demo from "../StyleDemo/style.module.css";
 export default class DemoChangeKinh extends Component {
   state = {
-    changeImg: `./img/v1.png`,
+    glassesOb: {
+      id: 1,
+      price: 30,
+      name: "GUCCI G8850U",
+      url: `./img/v1.png`,
+      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip.",
+    },
+  };
+  renderDataGlasses = () => {
+    return arrGlasses.map((glasses, index) => {
+      return (
+        <div className="col-lg-2 col-md-3 col-sm-4 text-center" key={index}>
+          <div className="glasses-item p-2">
+            <button
+              onClick={() => {
+                this.changeGlasses(glasses);
+              }}
+              className={({ isActive }) =>
+                isActive
+                  ? " mx-2 nav-link bg-primary p-2"
+                  : " bg-dark mx-2 nav-link"
+              }
+            >
+              <img src={glasses.url} width={70} height={60} alt="..." />
+            </button>
+          </div>
+        </div>
+      );
+    });
+  };
+  changeGlasses = (newChange) => {
+    this.setState({
+      glassesOb: newChange,
+    });
   };
   render() {
     return (
@@ -33,105 +66,41 @@ export default class DemoChangeKinh extends Component {
                   left: "17%",
                 }}
               >
-                <img src={this.state.changeImg} alt="" className="w-75" />
+                <img src={this.state.glassesOb.url} alt="" className="w-75" />
+              </div>
+              <div
+                className="productTitle"
+                style={{
+                  position: "absolute",
+                  bottom: "4%",
+                  background: "orange",
+                }}
+              >
+                <h5
+                  style={{
+                    color: "yellow",
+                  }}
+                >
+                  {this.state.glassesOb.name}
+                </h5>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: this.state.glassesOb.desc.replace(
+                      /ending /g,
+                      "ending <br>"
+                    ),
+                  }}
+                />
               </div>
             </div>
             <div className="col-6 p-4">
               <img src="./img/model.jpg" className="w-75" />
             </div>
           </div>
-
-          <div className="d-flex" style={{ paddingTop: 100 }}>
-            <button
-              className="mx-2"
-              onClick={() => {
-                this.setState({
-                  changeImg: `./img/v1.png`,
-                });
-              }}
-            >
-              <img src="./img/v1.png" alt="" cla className="w-100" />
-            </button>
-            <button
-              className="mx-2"
-              onClick={() => {
-                this.setState({
-                  changeImg: `./img/v2.png`,
-                });
-              }}
-            >
-              <img src="./img/v2.png" alt="" className="w-100" />
-            </button>
-            <button
-              className="mx-2"
-              onClick={() => {
-                this.setState({
-                  changeImg: `./img/v3.png`,
-                });
-              }}
-            >
-              <img src="./img/v3.png" alt="" className="w-100" />
-            </button>
-            <button
-              className="mx-2"
-              onClick={() => {
-                this.setState({
-                  changeImg: `./img/v4.png`,
-                });
-              }}
-            >
-              <img src="./img/v4.png" alt="" className="w-100" />
-            </button>
-            <button
-              className="mx-2"
-              onClick={() => {
-                this.setState({
-                  changeImg: `./img/v5.png`,
-                });
-              }}
-            >
-              <img src="./img/v5.png" alt="" className="w-100" />
-            </button>
-            <button
-              className="mx-2"
-              onClick={() => {
-                this.setState({
-                  changeImg: `./img/v6.png`,
-                });
-              }}
-            >
-              <img src="./img/v6.png" alt="" className="w-100" />
-            </button>
-            <button
-              className="mx-2"
-              onClick={() => {
-                this.setState({
-                  changeImg: `./img/v7.png`,
-                });
-              }}
-            >
-              <img src="./img/v7.png" alt="" className="w-100" />
-            </button>
-            <button
-              className="mx-2"
-              onClick={() => {
-                this.setState({
-                  changeImg: `./img/v8.png`,
-                });
-              }}
-            >
-              <img src="./img/v8.png" alt="" className="w-100" />
-            </button>
-            <button
-              className="mx-2"
-              onClick={() => {
-                this.setState({
-                  changeImg: `./img/v9.png`,
-                });
-              }}
-            >
-              <img src="./img/v9.png" alt="" className="w-100" />
-            </button>
+          <div className="product-select">
+            <div className="container">
+              <div className="row">{this.renderDataGlasses()}</div>
+            </div>
           </div>
         </div>
       </section>

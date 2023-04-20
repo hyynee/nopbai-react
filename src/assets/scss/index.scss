@@ -3,3 +3,59 @@ $color : red;
 .colorRed{
     color: $color;
 }
+
+.glassesItem {
+    cursor: pointer;
+
+    padding: 8px 0;
+
+    button {
+        transition: all .5s;
+        border: none;
+
+        &:focus {
+            background-color: rgba(7, 152, 7, 0.7);
+        }
+
+        &:focus img {
+            width: 130px;
+            height: 60px;
+
+            @media only screen and (max-width: 768px) {
+                width: 105px;
+                height: 50px;
+            }
+
+            @media only screen and (max-width: 576px) {
+                width: 94px;
+                height: 37px;
+
+            }
+        }
+
+        img {
+            border: 1px solid transparent;
+            transition: all 0.5s;
+            padding: 8px;
+            width: 120px;
+            height: 50px;
+
+            @media only screen and (max-width: 768px) {
+                width: 95px;
+                height: 40px;
+                padding: 4px;
+
+            }
+
+            @media only screen and (max-width: 576px) {
+                width: 85px;
+                height: 33px;
+                padding: 4px;
+            }
+        }
+    }
+
+
+
+
+}
