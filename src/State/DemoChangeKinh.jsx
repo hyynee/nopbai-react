@@ -21,9 +21,7 @@ export default class DemoChangeKinh extends Component {
                 this.changeGlasses(glasses);
               }}
               className={({ isActive }) =>
-                isActive
-                  ? " mx-2 nav-link bg-primary p-2"
-                  : " bg-dark mx-2 nav-link"
+                isActive ? " mx-2 nav-link p-2" : " bg-dark mx-2 nav-link"
               }
             >
               <img src={glasses.url} width={70} height={60} alt="..." />
