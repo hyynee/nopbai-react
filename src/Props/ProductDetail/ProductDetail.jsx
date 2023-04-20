@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Cart from "./Cart";
 import Detail from "./Detail";
 
 const dataPhone = [
@@ -45,7 +46,11 @@ export default class ProductDetail extends Component {
     let arrJSX = dataPhone.map((item) => {
       return (
         <div className="col-md-4 mt-2" key={item.maSP}>
-          <Detail phone={item} XemChiTiet = {this.xemChiTiet}></Detail>
+          <Detail
+            phone={item}
+            XemChiTiet={this.xemChiTiet}
+            addItem={this.addItem}
+          ></Detail>
         </div>
       );
     });
@@ -64,11 +69,71 @@ export default class ProductDetail extends Component {
       giaBan: 5700000,
       hinhAnh: "./img/vsphone.jpg",
     },
+    arrGioHang: [
+      {
+        maSP: 1,
+        tenSP: "VinSmart Live",
+        giaBan: 5700000,
+        hinhAnh: "./img/vsphone.jpg",
+        soLuong: 2,
+      },
+    ],
   };
+  /* state đặt ở đâu thì hàm setState viết ở component đó */
   xemChiTiet = (spClick) => {
     // console.log(spClick)
     this.setState({
       spChiTiet: spClick,
+    });
+  };
+  addItem = (spClick) => {
+    console.log(spClick); // log dc
+    spClick = { ...spClick, soLuong: 1 };
+    // log dc thì push nó vào cái arrGioHang
+    // this.state.arrGioHang.push(spClick);
+    // kiểm tra xem sp đó đã có hay chưa. Nếu có rồi thì tăng số lượng lên còn chưa có thì push nó vào mảng arrGioHang
+    let gioHang = this.state.arrGioHang;
+    let spGh = gioHang.find((sp) => sp.maSP === spClick.maSP);
+    if (spGh) {
+      spGh.soLuong += 1;
+    } else {
+      gioHang.push(spClick);
+    }
+    // gán lại state = state mới
+    this.setState({
+      arrGioHang: gioHang,
+    });
+  };
+  delSP = (maSP) => {
+    console.log(maSP);
+    // dựa vào mã sp tìm ra vị trí của sản phẩm cần xóa trong arrGioHang
+    let index = this.state.arrGioHang.findIndex((item) => item.maSP === maSP);
+    if (index !== -1) {
+      this.state.arrGioHang.splice(index, 1);
+    }
+    // xét setState
+    this.setState({
+      arrGioHang: this.state.arrGioHang,
+    });
+  };
+  countUpDown = (maSP, soLuong) => {
+    console.log(maSP, soLuong);
+    // tìm ra sp dc Click dựa vào mã
+    let spGH = this.state.arrGioHang.find((item) => item.maSP === maSP);
+    if (spGH) {
+      spGH.soLuong += soLuong;
+      if (spGH.soLuong < 1) {
+        if (window.confirm("bạn có muốn xóa sản phẩm này đi không")) {
+          this.delSP(spGH.maSP);
+          return;
+        } else {
+          spGH.soLuong -= soLuong;
+        }
+      }
+    }
+    // cập nhật state
+    this.setState({
+      arrGioHang: this.state.arrGioHang,
     });
   };
   render() {
@@ -86,6 +151,12 @@ export default class ProductDetail extends Component {
     } = this.state.spChiTiet;
     return (
       <div className="container">
+        <h3>Giỏ hàng</h3>
+        <Cart
+          arrGioHang={this.state.arrGioHang}
+          delSP={this.delSP}
+          countUpDown={this.countUpDown}
+        ></Cart>
         <h3>Danh Sách Sản Phẩm</h3>
         <div className="row">
           {this.renderPhone()}

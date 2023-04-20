@@ -86,6 +86,19 @@ export default class HomeTemplates extends Component {
             >
               HomeWork-2
             </NavLink>
+            <NavLink
+              to="/shoestore"
+              className={({ isActive }) =>
+                isActive
+                  ? "mx-2 text-dark nav-link bg-white p-2"
+                  : "mx-2 text-white nav-link bg-dark"
+              }
+              style={({ isActive }) =>
+                isActive ? { border: "4px solid orange" } : {}
+              }
+            >
+              HomeWork-3
+            </NavLink>
           </nav>
         </header>
         <main style={{ minHeight: 650 }}>

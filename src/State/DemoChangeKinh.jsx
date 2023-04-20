@@ -21,7 +21,7 @@ export default class DemoChangeKinh extends Component {
                 this.changeGlasses(glasses);
               }}
               className={({ isActive }) =>
-                isActive ? " mx-2 nav-link p-2" : " bg-dark mx-2 nav-link"
+                isActive ? " mx-2 " : " bg-light mx-2"
               }
             >
               <img src={glasses.url} width={70} height={60} alt="..." />
@@ -81,6 +81,7 @@ export default class DemoChangeKinh extends Component {
                 >
                   {this.state.glassesOb.name}
                 </h5>
+                <h5>${this.state.glassesOb.price}</h5>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: this.state.glassesOb.desc.replace(

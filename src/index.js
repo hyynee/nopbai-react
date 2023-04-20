@@ -20,6 +20,7 @@ import HomeTemplates from "./Templates/HomeTemplates";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
 import ReactFormDemo from "./ReactFormDemo/ReactFormDemo";
+import ShoesStore from "./homework-3/ShoesStore";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>
@@ -39,6 +40,7 @@ root.render(
             path="glasses"
             element={<DemoChangeKinh></DemoChangeKinh>}
           ></Route>
+          <Route path="shoestore" element={<ShoesStore></ShoesStore>}></Route>
           <Route path="*" element={<Navigate to={"/"}></Navigate>}></Route>
         </Route>
       </Routes>
