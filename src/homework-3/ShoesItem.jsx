@@ -31,6 +31,8 @@ export default class ShoesItem extends Component {
               onClick={() => {
                 xemCT(shoes);
               }}
+              data-bs-toggle="modal"
+              data-bs-target="#modalId"
             >
               View detail
             </button>
