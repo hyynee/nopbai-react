@@ -18,7 +18,7 @@ export default class ShoesStore extends Component {
     });
   };
   state = {
-    spChiTiet: {
+    shoesOb: {
       id: 1,
       name: "Adidas Prophere",
       alias: "adidas-prophere",
@@ -40,50 +40,76 @@ export default class ShoesStore extends Component {
       },
     ],
   };
-  xemChiTiet = (spClick) => {
-    console.log(spClick);
-    this.setState({
-      spChiTiet: spClick,
+  renderTable = () => {
+    return arrAdidas.map((item) => {
+      return (
+        <ShoesItem
+          shoes={item}
+          xemCT={this.viewDetail}
+          addToCart={this.addToCart}
+        ></ShoesItem>
+      );
     });
   };
-  addCart = (spClick) => {
-    console.log(spClick);
+  viewDetail = (spClick) => {
+    this.setState({
+      shoesOb: spClick,
+    });
+    return;
+  };
+  addToCart = (spClick) => {
     spClick = { ...spClick, soLuong: 1 };
     let gioHang = this.state.shoesCart;
-    let sp = gioHang.find((item) => item.id === spClick.id);
-    if (sp) {
-      sp.soLuong += 1;
+    let spGH = gioHang.find((item) => item.id === spClick.id);
+    if (spGH) {
+      spGH.soLuong += 1;
     } else {
       gioHang.push(spClick);
     }
+
     this.setState({
       shoesCart: gioHang,
     });
   };
-  delShoes = (id) => {
+  delItem = (id) => {
     console.log(id);
+    let index = this.state.shoesCart.findIndex((item) => item.id === id);
+    if (index !== -1) {
+      this.state.shoesCart.splice(index, 1);
+    }
+    this.setState({
+      shoesCart: this.state.shoesCart,
+    });
+  };
+  countNumber = (id, soLuong) => {
+    let spGH = this.state.shoesCart.find((item) => item.id === id);
+    if (spGH) {
+      spGH.soLuong += soLuong;
+      if (spGH.soLuong < 1) {
+        if (window.confirm("Bạn có muốn xóa sản phẩm này không!!!")) {
+          this.delItem(spGH.id);
+          return;
+        } else {
+          spGH.soLuong -= soLuong;
+        }
+      }
+    }
+    this.setState({
+      shoesCart: this.state.shoesCart,
+    });
   };
   render() {
-    let {
-      id,
-      name,
-      alias,
-      price,
-      description,
-      shortDescription,
-      quantity,
-      image,
-    } = this.state.spChiTiet;
     return (
       <div className="container">
-        <h3>ShoesCart</h3>
+        <h1 className="text-center">CART</h1>
         <ShoesCart
-          shoesCart={this.state.shoesCart}
-          delShoes={this.delShoes}
+          arrCart={this.state.shoesCart}
+          delItem={this.delItem}
+          countNumber={this.countNumber}
         ></ShoesCart>
-        <h3 className="text-center">SHOESSTORE</h3>
-        <div className="row">{this.renderItem()}</div>
-        <ShowInfo spCT={this.state.spChiTiet}></ShowInfo>
+        <h1 className="text-center">List Shoes</h1>
+        <div className="row">{this.renderTable()}</div>
+        <ShowInfo spCT={this.state.shoesOb}></ShowInfo>
       </div>
     );
   }

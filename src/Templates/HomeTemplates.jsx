@@ -7,7 +7,7 @@ export default class HomeTemplates extends Component {
       <div>
         <header className="header p-3 bg-dark text-white">
           <nav className="d-flex">
-            <NavLink
+            {/* <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive
@@ -58,7 +58,7 @@ export default class HomeTemplates extends Component {
               }
             >
               ReactForm
-            </NavLink>
+            </NavLink> */}
 
             <NavLink
               to="/demo"

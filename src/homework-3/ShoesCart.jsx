@@ -1,28 +1,42 @@
 import React, { Component } from "react";
 
 export default class ShoesCart extends Component {
-  renderShoes = () => {
-    let { shoesCart, delShoes} = this.props;
-    return shoesCart.map((item) => {
+  renderCart = () => {
+    const { arrCart, delItem, countNumber } = this.props;
+    return arrCart.map((item) => {
       return (
         <tr key={item.id}>
           <td>{item.id}</td>
           <td>{item.name}</td>
           <td>
-            <img src={item.image} width={50} alt="" />
+            <img src={item.image} alt="" width={50} />
           </td>
           <td>{item.price}</td>
           <td>
-            <button className="btn btn-success mx-2">+</button>
+            <button
+              className="btn btn-success mx-2"
+              onClick={() => {
+                countNumber(item.id, 1);
+              }}
+            >
+              +
+            </button>
             {item.soLuong}
-            <button className="btn btn-success mx-2">-</button>
+            <button
+              className="btn btn-success mx-2"
+              onClick={() => {
+                countNumber(item.id, -1);
+              }}
+            >
+              -
+            </button>
           </td>
-          <td>{item.soLuong * item.price}</td>
+          <td>{item.price * item.soLuong}</td>
           <td>
             <button
-              className="btn btn-danger"
+              className="btn btn-danger mx-2"
               onClick={() => {
-                delShoes(item.id);
+                delItem(item.id);
               }}
             >
               Delete
@@ -39,13 +53,13 @@ export default class ShoesCart extends Component {
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Img</th>
+            <th>Image</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th>Totalmoney</th>
+            <th>Total money</th>
           </tr>
         </thead>
-        <tbody>{this.renderShoes()}</tbody>
+        <tbody>{this.renderCart()}</tbody>
       </table>
     );
   }
